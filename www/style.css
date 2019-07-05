@@ -1,0 +1,25 @@
+body {
+    font-family: fantasy;
+    color: black;
+    font-size: 36px;
+}
+
+h1 {
+    background-color: burlywood;
+    text-align: center;
+    font-size: 2em;
+    color: green;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    }
+ul {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+    font-size: 2em;
+    text-align: center;
+    
+}

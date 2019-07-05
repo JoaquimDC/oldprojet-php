@@ -38,3 +38,4 @@ INNER JOIN Maitres m
 ON c.id_maitre = m.id
 WHERE c.id = 7
 
+SELECT 

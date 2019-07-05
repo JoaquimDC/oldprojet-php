@@ -35,6 +35,8 @@ class Chien{
     public function getTelephone(){
         return $this->telephone;
     }
+
+
 }
 
 ?>
