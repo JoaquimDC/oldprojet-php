@@ -17,6 +17,9 @@ CREATE TABLE Chiens (id INT PRIMARY KEY AUTO_INCREMENT,
     id_maitre INT,
      FOREIGN KEY(id_maitre) REFERENCES Maitres(id));
 
+DELETE FROM Chiens WHERE id=10;
+
+UPDATE Chiens set nom= "Toto", age = 4, race = "Terrier" WHERE id=2;
 
 
 

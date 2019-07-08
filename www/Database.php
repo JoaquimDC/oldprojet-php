@@ -1,5 +1,6 @@
 <?php
 require_once ("Chien.php");
+require_once ("Maitres.php");
 
 class Database{
 //attributs
@@ -32,9 +33,8 @@ class Database{
         return $this->connexion;
         }
 
-         //Fonction pour inserer un nouveau Maitre
-     //Fonction pour inserer un nouveau Maitre
-     public function insertMaster($name, $phoneNumber){
+        //Fonction pour inserer un nouveau Maitre
+     public function insertMaitre($name, $phoneNumber){
 
         //Je prepare la requête
         $pdoStatement = $this->connexion->prepare(
@@ -53,7 +53,7 @@ class Database{
          }
 
 //Fonction pour inserer un nouveau Maitre
-public function insertDog($name, $age, $race, $id_maitre){
+public function insertChien($name, $age, $race, $id_maitre){
 
     //Je prepare la requête
     $pdoStatement = $this->connexion->prepare(
@@ -78,7 +78,7 @@ public function insertDog($name, $age, $race, $id_maitre){
             //Je prepare la requête
            
             $pdoStatement = $this->connexion->prepare(
-                "SELECT DISTINCT id, nom, race FROM Chiens;");
+                "SELECT DISTINCT id, nom, age, race FROM Chiens;");
         
         //je execute la requete
             $pdoStatement->execute();
@@ -107,6 +107,70 @@ public function insertDog($name, $age, $race, $id_maitre){
         return  $monChien;
          
         }
-//fin de la classe Database
+    // Creer la fonction pour suprimer un chien via son id
+    public function deleteChienId($id){
+
+    //je prepare la requette
+        $pdoStatement = $this->connexion->prepare(
+            "DELETE FROM Chiens WHERE id = :idChien");
+
+    // execute la requette
+    $pdoStatement->execute(
+        array("idChien" => $id));
+        //var_dump($pdoStatement->errorInfo());
+
+    $errorCode = $pdoStatement->errorCode();
+            if ($errorCode == 0){
+                return true;
+            }
+            else {
+                return false;
+            }       
+    }
+
+    public function updateChien($id, $nom, $age, $race){
+        $pdoStatement = $this->connexion->prepare(
+            "UPDATE Chiens
+            SET nom = :nomChien, age = :ageChien, race = :raceChien
+            WHERE id = :idChien");
+        
+
+        $pdoStatement->execute(array(
+            "nomChien" => $nom,
+            "ageChien" => $age,
+            "raceChien" => $race,
+            "idChien" => $id));
+    
+        
+        $errorCode = $pdoStatement->errorCode();
+        if ($errorCode == 0){
+            return true;
+        }
+        else {
+            return false;
+        }    
+    }  
+
+    public function getAllmaitres(){
+
+        //Je prepare la requête
+
+        $pdoStatement = $this->connexion->prepare(
+            "SELECT * FROM Maitres"
+        );
+
+        //je execute la requete
+        $pdoStatement->execute();
+
+        //Je recupere la requete et on stock en php
+        $listeMaitres = $pdoStatement->fetchAll(PDO::FETCH_CLASS,"Maitre");
+        //var_dump ($listemaitres);
+        return $listeMaitres;
+    }
+   
+
 }
+
+//fin de la classe Database
+
 ?>

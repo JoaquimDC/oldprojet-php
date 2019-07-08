@@ -6,7 +6,7 @@ $annuaire = new Database();
 
 $id = $_GET['id'];
 
-$monChien = $annuaire->getChienId($id);
+$nomChien = $annuaire->getChienId($id);
 
 ?>
 
@@ -20,17 +20,18 @@ $monChien = $annuaire->getChienId($id);
 ?>
 
 <body>
-    <h1>Infos Chien:  <?php echo $monChien->getId(); ?></h1>
+    <h1>Infos Chien:  <?php echo $nomChien->getId(); ?></h1>
 
-    <h2>Nom : <?php echo $monChien->getNom(); ?></h2> 
-    <h2>Race : <?php echo $monChien->getRace(); ?></h2>
-    <h2>Age : <?php echo $monChien->getAge(); ?></h2>
+    <h2>Nom : <?php echo $nomChien->getNom(); ?></h2> 
+    <h2>Race : <?php echo $nomChien->getRace(); ?></h2>
+    <h2>Age : <?php echo $nomChien->getAge(); ?></h2>
     
     <h1>Contact Maitre</h2>
-    <h2>Maitre : <?php echo $monChien->getnomMaitre(); ?></h2>
-    <h2>Contact : <?php echo $monChien->gettelephone(); ?></h2>         
+    <h2>Maitre : <?php echo $nomChien->getnomMaitre(); ?></h2>
+    <h2>Contact : <?php echo $nomChien->gettelephone(); ?></h2>         
         
-     
+    <br>
+    <h2><a href="afficherChien.php?id=<?php echo $nomChien->getId();?>">Delete</a></h2>
 
 </body>
 </html>
