@@ -58,8 +58,9 @@ if($database->getConnexion() == null){
                </div>
         <br>
    
-        <input type="submit" value="Modifier">   
-    
+
+        <input class="Formulaire2" type="submit" value="Modifier">   
+ 
    </form>
   
   

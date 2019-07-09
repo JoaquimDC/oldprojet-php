@@ -16,7 +16,7 @@
      }
  
  //je fais appel a la fonction getChien de la Classe Database   
-  $Maitres = $database->getAllchiens();
+  $Maitres = $database->getAllMaitres();
  
 ?>
 
@@ -37,13 +37,13 @@
         <form action="process-create.php" method="post">
 
             <label for="nomChien">Nom : </label><br>
-                <input type="text" id="nomChien" name="nom" placeholder="Entrez le nom du chien" required><br>
+                <input class="Formulaire2" type="text" id="nomChien" name="nom" placeholder="Entrez le nom du chien" required><br>
             <br>
             <label for="ageChien">Age : </label><br>
-                <input type="number" id="ageChien" name="age" placeholder="Entrez l'age du chien" required><br>
+                <input class="Formulaire2" type="number" id="ageChien" name="age" placeholder="Entrez l'age du chien" required><br>
             <br>
             <label for="raceChien">Race : </label><br>
-                <input type="text" id="raceChien" name="race" placeholder="Entrez la race du chien" required><br>
+                <input class="Formulaire2" type="text" id="raceChien" name="race" placeholder="Entrez la race du chien" required><br>
     </div>
         <br>
    
@@ -51,7 +51,7 @@
     <div class="infosMaitre"> 
         <label for="choixMaitre">Nom Maitre: </label><br>
     
-        <select id="choixMaitre" name="idMaitre">
+        <select class="Formulaire2" id="choixMaitre" name="idMaitre">
     </div>
         <br>
                 <?php
@@ -63,7 +63,7 @@
         <br>
         <br>
         <br>
-        <input type="submit">   
+        <input class="Formulaire2" type="submit">   
         
      
     </form>
