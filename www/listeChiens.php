@@ -1,12 +1,16 @@
 <html>
 
 <header>
-<link rel="stylesheet" href="style.css"></var>
-<h2><a href="create-chien.php">Inserer un nouveau chien</a></h2>
+<link rel="stylesheet" href="style.css">
+
+
 </header>
 
 
 <body>
+    <br>
+    <a class="lienretour" href="create-chien.php">Inserer un nouveau chien</a></h2>
+    
     <?php
     require_once ("Database.php");
     require_once ("Chien.php");

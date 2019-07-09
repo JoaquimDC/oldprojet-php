@@ -1,6 +1,3 @@
-
-
-
 <?php
 
 require_once ("Database.php");
@@ -37,9 +34,9 @@ if($database->getConnexion() == null){
 
 
 <body>
-<a id="lienretour" href="listeChiens.php">Retour à la liste des Chiens</a>
+<a class="lienretour" href="listeChiens.php">Retour à la liste des Chiens</a>
 
- <h2>Modifier les données du chien <?php echo $updateChien->getId()?></h2>
+ <h2 class="infosMaitre3" >Modifier les données du chien <?php echo $updateChien->getId()?></h2>
 
 <div class="Formulaire">    
        <form action="process-update.php" method="post">

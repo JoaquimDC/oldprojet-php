@@ -31,8 +31,8 @@
 
 
 <body>
-<a id="lienretour" href="listeChiens.php">Afficher la liste Chiens</a>
-    <h2>Insérer nouveau chien</h2>
+<a class="lienretour" href="listeChiens.php">Retour à la liste Chiens</a>
+    <h2 class="infosMaitre3">Insérer nouveau chien</h2>
     <div class="Formulaire">    
         <form action="process-create.php" method="post">
 
@@ -47,9 +47,9 @@
     </div>
         <br>
    
-        <h2>Infos Maitre</h2>
+        <h2 class="infosMaitre3">Infos Maitre</h2>
     <div class="infosMaitre"> 
-        <label for="choixMaitre">Nom Maitre: </label><br>
+        <label for="choixMaitre">Choisir Maitre: </label><br>
     
         <select class="Formulaire2" id="choixMaitre" name="idMaitre">
     </div>
