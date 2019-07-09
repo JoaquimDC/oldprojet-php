@@ -1,4 +1,13 @@
 
+
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+</body>
 <?php
 
 require_once ("Database.php");
@@ -17,16 +26,16 @@ if($database->getConnexion() == null){
  $maitres = $database->getAllmaitres();
 
 //Je verefie que la requette c'est bien executé.
-           echo "<h1>Voici la liste de vos chiens</h1>";
+           echo "<h1>Voici la liste des Maitres</h1>";
            
            echo "<ul>";
            
             foreach($maitres as $test){
                 echo "<li>";
                 echo "<a href=afficherMaitre.php?id=" .$test->getId(). ">";
-                echo $test->getId(). " : "
-                .$test->getNom(). " : "
-                .$test->gettelephone(). " : </li>";       
+                echo "N° " .$test->getId().
+                " - Nom = " .$test->getNom().
+                "  - Contact = " .$test->gettelephone(). "</li>";       
            }
             echo "</ul>";   
         

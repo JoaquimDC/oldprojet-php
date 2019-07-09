@@ -16,45 +16,43 @@
      }
  
  //je fais appel a la fonction getChien de la Classe Database   
-  $Maitres = $database->getAllmaitres();
- /*
- //Je verefie que la requette c'est bien executé.
-            echo "<h1>Voici la liste des Maitres</h1>";
-            
-            echo "<ul>";
-            
-             foreach($Maitre as $test){
-                 echo "<li>";
-                 echo $test->getId(). " : "
-                 .$test->getNom(). " : "
-                 .$test->gettelephone(). " : "
-                 ."</li>";       
-            }
-             echo "</ul>"; 
-*/  
-
+  $Maitres = $database->getAllchiens();
+ 
 ?>
 
 <html>
 
 <header>
-    <link rel="stylesheet" href="style.css">
+ 
+<link rel="stylesheet" href="style.css">
+
 </header>
 
-<body>
-    <h1>Insérer nouveau chien</h1>
-    <form action="process-create.php" method="post">
 
-        <label for="nomChien">Nom : </label>
-            <input type="text" id="nomChien" name="nom" placeholder="Entrez le nom du chien"><br>
-        <label for="ageChien">Age : </label>
-            <input type="number" id="ageChien" name="age" placeholder="Entrez l'age du chien"><br>
-        <label for="raceChien">Race : </label>
-            <input type="text" id="raceChien" name="race" placeholder="Entrez la race du chien"><br>
+
+<body>
+<a id="lienretour" href="listeChiens.php">Afficher la liste Chiens</a>
+    <h2>Insérer nouveau chien</h2>
+    <div class="Formulaire">    
+        <form action="process-create.php" method="post">
+
+            <label for="nomChien">Nom : </label><br>
+                <input type="text" id="nomChien" name="nom" placeholder="Entrez le nom du chien" required><br>
+            <br>
+            <label for="ageChien">Age : </label><br>
+                <input type="number" id="ageChien" name="age" placeholder="Entrez l'age du chien" required><br>
+            <br>
+            <label for="raceChien">Race : </label><br>
+                <input type="text" id="raceChien" name="race" placeholder="Entrez la race du chien" required><br>
+    </div>
         <br>
+   
         <h2>Infos Maitre</h2>
-        <label for="choixMaitre">Nom Maitre: </label>
+    <div class="infosMaitre"> 
+        <label for="choixMaitre">Nom Maitre: </label><br>
+    
         <select id="choixMaitre" name="idMaitre">
+    </div>
         <br>
                 <?php
                 foreach($Maitres as $maitre){
@@ -64,11 +62,12 @@
         </Select>
         <br>
         <br>
-
-        <input type="submit">
+        <br>
+        <input type="submit">   
+        
      
     </form>
-    
+   
    
 
 </body>

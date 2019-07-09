@@ -167,7 +167,22 @@ public function insertChien($name, $age, $race, $id_maitre){
         //var_dump ($listemaitres);
         return $listeMaitres;
     }
-   
+   //creation de la fonction update chien
+/*
+   public function getupdateChien($id, $nom, $age, $race){
+    $pdoStatement = $this->connexion->prepare(
+        "UPDATE Chiens
+        SET nom = :nomChien, age = :ageChien, race = :raceChien
+        WHERE id = :idChien");
+    
+
+    $pdoStatement->execute(array(
+        "nomChien" => $nom,
+        "ageChien" => $age,
+        "raceChien" => $race,
+        "idChien" => $id));
+    }
+*/
 
 }
 

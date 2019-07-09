@@ -20,6 +20,10 @@ $nomChien = $annuaire->getChienId($id);
 ?>
 
 <body>
+    <a id="lienretour" href="listeChiens.php">Retour liste Chiens</a><br>
+    <br>
+    <a id="lienretour" href="upDateChien.php?id=<?php echo $nomChien->getId();?>">Mise a jour données du chien</a>
+
     <h1>Infos Chien:  <?php echo $nomChien->getId(); ?></h1>
 
     <h2>Nom : <?php echo $nomChien->getNom(); ?></h2> 
@@ -29,7 +33,7 @@ $nomChien = $annuaire->getChienId($id);
     <h1>Contact Maitre</h2>
     <h2>Maitre : <?php echo $nomChien->getnomMaitre(); ?></h2>
     <h2>Contact : <?php echo $nomChien->gettelephone(); ?></h2>         
-        
+              
     <br>
     <h2><a href="afficherChien.php?id=<?php echo $nomChien->getId();?>">Delete</a></h2>
 

@@ -2,8 +2,7 @@
 
 <header>
 <link rel="stylesheet" href="style.css"></var>
-<a href="create-chien.php">Inserer un nouveau chien</a>
-<br>
+<h2><a href="create-chien.php">Inserer un nouveau chien</a></h2>
 </header>
 
 
@@ -35,11 +34,11 @@
                 foreach($chiens as $test){
                     echo "<li>";
                     echo "<a href=afficherChien.php?id=" .$test->getId(). ">";
-                    echo $test->getId(). " : "
-                    .$test->getNom(). " : "
-                    .$test->getAge(). " : "
+                    echo "N° " .$test->getId(). " = Nom: "
+                    .$test->getNom(). ", Age =  "
+                    .$test->getAge(). ", Race = "
                     .$test->getRace().
-                    "</li>";       
+                    ". </li>";       
                 }
                 echo "</ul>";   
             
